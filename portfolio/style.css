@@ -45,11 +45,29 @@
 
     .project-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 24px;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 40px auto;
         padding: 0 24px;
+    }
+
+    @media (max-width: 1000px) {
+        .project-list {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 760px) {
+        .project-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 520px) {
+        .project-list {
+            grid-template-columns: 1fr;
+        }
     }
 
     .project-card {
@@ -57,6 +75,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+        min-height: 190px;
         padding: 24px;
         background-color: #fff;
         border: 1px solid #e2e2e2;
@@ -80,6 +99,15 @@
         font-size: 1.25rem;
     }
 
+    .project-label {
+        display: inline-block;
+        color: #555;
+        font-size: 0.75rem;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
     .project-card p {
         color: #555;
         font-size: 1rem;
@@ -100,4 +128,58 @@
     .project-card a:focus-visible {
         outline: 2px solid #174ea6;
         outline-offset: 4px;
+    }
+
+    .project-detail {
+        max-width: 760px;
+        margin: 40px auto;
+        padding: 32px;
+        background-color: #fff;
+        border: 1px solid #e2e2e2;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .project-detail h1 {
+        margin: 12px 0 20px;
+    }
+
+    .project-detail h2 {
+        margin: 28px 0 12px;
+    }
+
+    .project-detail p {
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .project-detail .project-summary {
+        font-size: 1.15rem;
+    }
+
+    .project-detail ul {
+        padding-left: 24px;
+        color: #444;
+        line-height: 1.8;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 24px;
+        color: #174ea6;
+        font-weight: bold;
+    }
+
+    .back-link:focus-visible {
+        outline: 2px solid #174ea6;
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 520px) {
+        .project-detail {
+            margin: 24px 16px;
+            padding: 24px;
+        }
     }
